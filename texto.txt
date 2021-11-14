@@ -3,3 +3,5 @@ esta es una prueba que se hará
 acerca del funcionamiento
 
 de git como manejador de versiones esta definitivamente es un excelente programa
+
+Esta es otra linea para ver los cambios
