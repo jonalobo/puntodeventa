@@ -29,7 +29,7 @@ btnAgregar.addEventListener('click', (e)=>{
     }
 })
 
-//Limpiar entradas
+//Limpiar entradas inmediatamente despues de agregar el producto
 function limpiar(nombre,precio,cantidad,serie)  {
     nombre.value = ''
     precio.value = ''
