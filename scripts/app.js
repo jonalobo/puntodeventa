@@ -2,6 +2,8 @@
 const entradas = document.querySelectorAll('input');
 //Declaración del botón de agregar y prevenir su comportamiento por defecto
 const btnAgregar = document.querySelector('.btn-agregar');
+//Renderizar contenido en el DOM
+const render = document.querySelector('.render')
 
 //Arreglo de objetos creados desde los input
 const productos = [];
@@ -25,7 +27,7 @@ btnAgregar.addEventListener('click', (e)=>{
         //Luego el objeto se añade al arreglo global productos
         productos.push(objProductos);
         limpiar(nombre,precio,cantidad,serie)
-        console.log(productos)
+        renderizar(productos)
     }
 })
 
@@ -44,4 +46,17 @@ function validacion(nombre,precio,cantidad,serie) {
     } else {
         alert('Debes agregar todos los datos')
     }
+}
+
+//Función para renderizar el contenido del arreglo productos en el DOM
+function renderizar(arreglo) {
+    //Limpia el contenedor donde se insertara el objeto
+    render.innerHTML = ''
+    //Desestructuracion del objeto producto
+    arreglo.forEach(objeto => {
+        const { nombre, precio } = objeto
+        const HTML = `<li>${nombre}<span>${precio}</span></li>`
+        //Inserción en el HTML
+        render.innerHTML += HTML
+    });
 }
