@@ -55,7 +55,7 @@ function renderizar(arreglo) {
     //Desestructuracion del objeto producto
     arreglo.forEach(objeto => {
         const { nombre, precio } = objeto
-        const HTML = `<li>${nombre}<span>${precio}</span></li>`
+        const HTML = `<li><span class="nombre">${nombre}</span><span class="precio">${precio}</span><span class="borrar">X</span></li>`
         //Inserción en el HTML
         render.innerHTML += HTML
     });
